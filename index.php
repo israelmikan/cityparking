@@ -19,7 +19,18 @@
   </head>
 
   <body>
-  <center><h1>City parking Tracer</h1> || <a href="add.php">Manage Spots</a></center>
+  <style>
+    .animated{
+      background-image: url('car.gif');
+      background-repeat: no-repeat;
+      background-size: 100%;
+
+    }
+  </style>
+  <center>
+  <div class="animated">
+<img src="logo.jpg">
+  <h1 style="background-color:white; width:500px;">Parking Lot Management System</h1><h2 style="color:black;"><a href="add.php" style="display:bloack; background-color:black; color:white; ">Manage Parking Lots</a></h2></center><br></div>
     <div id="map"></div>
 
     <script>
@@ -46,12 +57,11 @@
             Array.prototype.forEach.call(markers, function(markerElem) {
               var name = markerElem.getAttribute('name');
               var address = markerElem.getAttribute('address');
-
               var status = markerElem.getAttribute('status');
               var type = markerElem.getAttribute('type');
                var cars = markerElem.getAttribute('cars');
-			    var maxcars = markerElem.getAttribute('maxcars');
-               var intoinfo=address+ " Maximum Cars: "+ maxcars+" ||| Parking Status: "+ status + " ||Total cars: "+ cars;
+			        var maxcars = markerElem.getAttribute('maxcars');
+      var intoinfo=address+ " Maximum Cars: "+ maxcars +" ||| Parking Status: "+ status + " ||Total in: "+ cars;
               var point = new google.maps.LatLng(
                   parseFloat(markerElem.getAttribute('lat')),
                   parseFloat(markerElem.getAttribute('lng')));

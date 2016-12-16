@@ -46,7 +46,8 @@ while ($row = @mysql_fetch_assoc($result)){
   echo 'type="' . $row['type'] . '" ';
    echo 'status="' . $row['status'] . '" ';
    echo 'cars="' . $row['cars'] . '" ';
-  echo '/>';
+   echo 'maxcars="' . $row['maxcars'] . '" ';
+    echo '/>';
 }
 
 // End XML file
